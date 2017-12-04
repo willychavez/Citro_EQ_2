@@ -78,13 +78,13 @@ norma_ym = norm(ym(:,j));
   for i=1:size(YYoff{j},2)
     norma_y = norm(YYoff{j}(:,i));
     costheta = dot(YYoff{j}(:,i),ym(:,j))/(norma_y * norma_ym);
-    if j==1 &&  costheta < 0.995
+    if j==1 &&  costheta < 0.992
       A1 = [A1;i];
     endif
     if j==2 &&  costheta < 0.995
       A2 = [A2;i];
     endif
-    if j==3 &&  costheta < 0.991
+    if j==3 &&  costheta < 0.987
       A3 = [A3;i];
     endif
   end
@@ -210,12 +210,12 @@ for l=1:length(YYcorrigido{1}(1,:))
 end                            
 
 %fprintf(fid,'%d,',k);    
-for l=1:length(yycorrigido{2}(1,:))
+for l=1:length(YYcorrigido{2}(1,:))
   fprintf(fid,'%i,',folhas{2}(l,1:end));
     for j=1:size(x,1)
-      fprintf(fid,'%0.5f,',yycorrigido{2}(j,l));
+      fprintf(fid,'%0.5f,',YYcorrigido{2}(j,l));
     end
-  fprintf(fid,'sadia');
+  fprintf(fid,'Sadia');
   fprintf(fid,'\n');
 end
 
